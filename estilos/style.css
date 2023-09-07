@@ -29,12 +29,18 @@ body {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.corpo > .resultado > p {
+#txtCalc {
   position: absolute;
   bottom: 5px;
   right: 20px;
   font-size: 50px;
   color: white;
+}
+#preRes {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  color: rgba(255, 255, 255, 0.5);
 }
 .corpo > .inputs {
   display: grid;
@@ -51,9 +57,7 @@ body {
 .corpo > .inputs > div > p::selection {
   display: none;
 }
-.corpo > .inputs > div:hover {
-  background-color: rgba(140, 116, 163, 0.384);
-}
+
 .corpo > .inputs > div > p {
   color: white;
   font-size: 25px;
@@ -66,6 +70,9 @@ body {
 .roxo_claro {
   background-color: #5a465c;
 }
+.roxo_claro:hover{
+  background-color: #5a465c69;
+}
 .roxo_mais_claro {
   background-color: #665068;
 }
@@ -73,11 +80,14 @@ body {
   background-color: #665068;
   border-bottom-left-radius: 10px;
 }
-#roxo_mais_claro:hover {
-  background-color: rgba(175, 173, 173, 0.384);
+.roxo_mais_claro:hover {
+  background-color: #66506838;
 }
 .amarelo {
   background-color: #f49e3f;
+}
+.amarelo:hover {
+  background-color: #f49d3f65;
 }
 #ph19 {
   border-bottom-right-radius: 10px;

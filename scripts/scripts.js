@@ -1,8 +1,9 @@
 let calc = 0;
 let arrayCalc = [];
 let condOp = "";
-
+let calc2 = "";
 let txtcalc = document.getElementById("txtCalc");
+let preRes = document.getElementById("preRes");
 let resultado = document.getElementById("ph19");
 let adicao = document.getElementById("adicao");
 let subtracao = document.getElementById("subtracao");
@@ -14,6 +15,7 @@ let numNeg;
 let porCem;
 
 function AC() {
+  preRes.innerText = "";
   txtcalc.style.fontSize = "50px";
   txtcalc.style.marginBottom = "0px";
   txtcalc.innerHTML = 0;
@@ -61,11 +63,12 @@ function pegaNumero(n) {
   }
   calc = Number(txtcalc.innerText);
 }
-function operacoes(n) {
+function operacoes(n, n1) {
   txtcalc.style.fontSize = "50px";
   condOp = n;
-  txtcalc.innerText = "";
+  txtcalc.innerText = 0;
   arrayCalc.push(calc);
+  preRes.innerText = arrayCalc[0] + n1;
   calc = null;
   index = arrayCalc.indexOf(null);
   if (index > -1) {
@@ -105,21 +108,25 @@ function nove() {
 }
 
 adicao.addEventListener("click", () => {
-  operacoes("adicao");
+  operacoes("adicao", " + ");
 });
 subtracao.addEventListener("click", () => {
-  operacoes("subtracao");
+  operacoes("subtracao", " - ");
 });
 multiplicacao.addEventListener("click", () => {
-  operacoes("multiplicacao");
+  operacoes("multiplicacao", " x ");
 });
 divisao.addEventListener("click", () => {
-  operacoes("divisao");
+  operacoes("divisao", " ÷ ");
 });
 
 resultado.addEventListener("click", () => {
   if (condOp === "adicao") {
     arrayCalc.push(calc);
+    if (calc == null) {
+      calc = 0;
+    }
+    preRes.innerText += " " + calc + " =";
     calc = null;
     index = arrayCalc.indexOf(null);
     if (index > -1) {
@@ -142,6 +149,10 @@ resultado.addEventListener("click", () => {
     }
   } else if (condOp === "subtracao") {
     arrayCalc.push(calc);
+    if (calc == null) {
+      calc = 0;
+    }
+    preRes.innerText += " " + calc + " =";
     calc = null;
     index = arrayCalc.indexOf(null);
     if (index > -1) {
@@ -163,6 +174,10 @@ resultado.addEventListener("click", () => {
     }
   } else if (condOp === "multiplicacao") {
     arrayCalc.push(calc);
+    if (calc == null) {
+      calc = 0;
+    }
+    preRes.innerText += " " + calc + " =";
     calc = null;
     index = arrayCalc.indexOf(null);
     if (index > -1) {
@@ -184,6 +199,10 @@ resultado.addEventListener("click", () => {
     }
   } else if (condOp === "divisao") {
     arrayCalc.push(calc);
+    if (calc == null) {
+      calc = 0;
+    }
+    preRes.innerText += " " + calc + " =";
     calc = null;
     index = arrayCalc.indexOf(null);
     if (index > -1) {
