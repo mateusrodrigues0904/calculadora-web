@@ -46,6 +46,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.corpo > .inputs > div > p::selection {
+  display: none;
 }
 .corpo > .inputs > div:hover {
   background-color: rgba(140, 116, 163, 0.384);
@@ -53,7 +57,7 @@ body {
 .corpo > .inputs > div > p {
   color: white;
   font-size: 25px;
-  cursor: default;
+  cursor: pointer;
 }
 .zero {
   grid-column-start: 1;
