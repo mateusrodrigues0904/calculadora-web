@@ -65,6 +65,7 @@ function pegaNumero(n) {
 }
 function operacoes(n, n1) {
   txtcalc.style.fontSize = "50px";
+  txtcalc.style.marginBottom = "0px";
   condOp = n;
   txtcalc.innerText = 0;
   arrayCalc.push(calc);
@@ -119,19 +120,21 @@ multiplicacao.addEventListener("click", () => {
 divisao.addEventListener("click", () => {
   operacoes("divisao", " ÷ ");
 });
+function resolucoes() {
+  arrayCalc.push(calc);
+  if (arrayCalc[1] !== null) {
+    preRes.innerText += " " + arrayCalc[1] + " =";
+  }
+  calc = null;
+  index = arrayCalc.indexOf(null);
+  if (index > -1) {
+    arrayCalc.splice(index, 1);
+  }
+}
 
 resultado.addEventListener("click", () => {
   if (condOp === "adicao") {
-    arrayCalc.push(calc);
-    if (calc == null) {
-      calc = 0;
-    }
-    preRes.innerText += " " + calc + " =";
-    calc = null;
-    index = arrayCalc.indexOf(null);
-    if (index > -1) {
-      arrayCalc.splice(index, 1);
-    }
+    resolucoes();
     let soma = 0;
     for (let i = 0; i < arrayCalc.length; i++) {
       soma += arrayCalc[i];
@@ -148,16 +151,7 @@ resultado.addEventListener("click", () => {
       txtcalc.innerText = soma;
     }
   } else if (condOp === "subtracao") {
-    arrayCalc.push(calc);
-    if (calc == null) {
-      calc = 0;
-    }
-    preRes.innerText += " " + calc + " =";
-    calc = null;
-    index = arrayCalc.indexOf(null);
-    if (index > -1) {
-      arrayCalc.splice(index, 1);
-    }
+    resolucoes();
     let sub = arrayCalc[0];
     for (let i = 1; i < arrayCalc.length; i++) {
       sub -= arrayCalc[i];
@@ -173,16 +167,7 @@ resultado.addEventListener("click", () => {
       txtcalc.innerText = sub;
     }
   } else if (condOp === "multiplicacao") {
-    arrayCalc.push(calc);
-    if (calc == null) {
-      calc = 0;
-    }
-    preRes.innerText += " " + calc + " =";
-    calc = null;
-    index = arrayCalc.indexOf(null);
-    if (index > -1) {
-      arrayCalc.splice(index, 1);
-    }
+    resolucoes();
     let mult = 1;
     for (let i = 0; i < arrayCalc.length; i++) {
       mult *= arrayCalc[i];
@@ -198,16 +183,7 @@ resultado.addEventListener("click", () => {
       txtcalc.innerText = mult;
     }
   } else if (condOp === "divisao") {
-    arrayCalc.push(calc);
-    if (calc == null) {
-      calc = 0;
-    }
-    preRes.innerText += " " + calc + " =";
-    calc = null;
-    index = arrayCalc.indexOf(null);
-    if (index > -1) {
-      arrayCalc.splice(index, 1);
-    }
+    resolucoes();
     let div = arrayCalc[0];
     for (let i = 1; i < arrayCalc.length; i++) {
       if (arrayCalc[i] !== 0) {

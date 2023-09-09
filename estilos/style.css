@@ -70,7 +70,7 @@ body {
 .roxo_claro {
   background-color: #5a465c;
 }
-.roxo_claro:hover{
+.roxo_claro:hover {
   background-color: #5a465c69;
 }
 .roxo_mais_claro {
@@ -79,6 +79,9 @@ body {
 #roxo_mais_claro {
   background-color: #665068;
   border-bottom-left-radius: 10px;
+}
+#roxo_mais_claro:hover {
+  background-color: #66506838;
 }
 .roxo_mais_claro:hover {
   background-color: #66506838;
