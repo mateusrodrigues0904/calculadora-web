@@ -120,6 +120,7 @@ multiplicacao.addEventListener("click", () => {
 divisao.addEventListener("click", () => {
   operacoes("divisao", " ÷ ");
 });
+
 function resolucoes() {
   arrayCalc.push(calc);
   if (arrayCalc[1] !== null) {
